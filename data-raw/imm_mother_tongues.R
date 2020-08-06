@@ -5,22 +5,26 @@ library(dplyr)
 
 # code sourced from: https://www.dshkol.com/2017/language-diversity-in-canada/
 
-vectors <- list_census_vectors("CA16") %>% filter(str_detect(details, "Mother"))
-example <- vectors %>%
-    slice(1)
-example$details
-mandarin <- vectors %>% filter(str_detect(details, "Mandarin"))
-punjabi <- vectors %>% filter(str_detect(details, "Punjabi"))
+dataset <- "CA16"
 
-regions_list10 <- list_census_regions(dataset) %>%
-    filter(level=="CMA") %>%
-    top_n(10,pop) %>%
+non_off_langs <- list_census_vectors(dataset) %>%
+    filter(vector == "v_CA16_815")
+
+non_off_langs_children <- non_off_langs %>%
+    child_census_vectors(TRUE)
+
+non_off_langs_vectors <- bind_rows(non_off_langs, non_off_langs_children) %>%
+    pull(vector)
+
+region <- list_census_regions(dataset, use_cache = FALSE) %>%
+    filter(level=="C") %>%
     as_census_region_list
 
 census_data <- get_census(dataset='CA16',
-                          regions=regions_list10,
-                          vectors=c("v_CA16_1259", "v_CA16_1259"),
-                          level='CMA')
+                          regions=region,
+                          vectors=non_off_langs_vectors,
+                          level='C', use_cache = FALSE)
+
 
 
 
