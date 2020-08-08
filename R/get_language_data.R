@@ -13,25 +13,25 @@
 #' language_data("CA16", "v_CA16_815")
 #' }
 get_language_data <- function(dataset, query_vector) {
-    langs <- list_census_vectors(dataset) %>%
-        filter(vector == query_vector)
+    langs <- cancensus::list_census_vectors(dataset) %>%
+        dplyr::filter(vector == query_vector)
 
     langs_children <- langs %>%
-        child_census_vectors(TRUE)
+        cancensus::child_census_vectors(TRUE)
 
-    langs_vectors <- bind_rows(langs, langs_children) %>%
-        pull(vector)
+    langs_vectors <- dplyr::bind_rows(langs, langs_children) %>%
+        dplyr::pull(vector)
 
-    region <- list_census_regions(dataset, use_cache = FALSE) %>%
-        filter(level == "C") %>%
-        as_census_region_list
+    region <- cancensus::list_census_regions(dataset, use_cache = FALSE) %>%
+        dplyr::filter(level == "C") %>%
+        cancensus::as_census_region_list()
 
-    mother_tongue <- get_census(dataset = dataset,
+    mother_tongue <- cancensus::get_census(dataset = dataset,
                                 regions = region,
                                 vectors = langs_vectors,
                                 level = "C") %>%
-        select(-GeoUID, -`Region Name`, -Households, -Type, -`Area (sq km)`, -Population, -Dwellings) %>%
-        pivot_longer(everything(), names_to = "mother_tongue", values_to = "count") %>%
+        dplyr::select(-GeoUID, -`Region Name`, -Households, -Type, -`Area (sq km)`, -Population, -Dwellings) %>%
+        tidyr::pivot_longer(everything(), names_to = "mother_tongue", values_to = "count") %>%
         separate(mother_tongue, into = c("junk", "mother_tongue"), sep = ": ") %>%
         arrange(mother_tongue) %>%
         select(-junk) %>%
