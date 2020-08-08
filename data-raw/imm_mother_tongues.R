@@ -1,31 +1,13 @@
 ## code to prepare `imm_mother_tongue` dataset goes here
 library(cancensus)
-library(stringr)
-library(dplyr)
+library(canlang)
 
-# code sourced from: https://www.dshkol.com/2017/language-diversity-in-canada/
+# turn this into a map... later...
+non_off_non_aborig_moth_tongue <- language_data("CA16", "v_CA16_815")
+aborig_moth_tongue <- language_data("v_CA16_567")
+off_lang_moth_tongue <- language_data("v_CA16_554")
+mother_tongue <- bind_rows(non_off_non_aborig_moth_tongue,
+          aborig_moth_tongue,
+          off_lang_moth_tongue)
 
-dataset <- "CA16"
-
-non_off_langs <- list_census_vectors(dataset) %>%
-    filter(vector == "v_CA16_815")
-
-non_off_langs_children <- non_off_langs %>%
-    child_census_vectors(TRUE)
-
-non_off_langs_vectors <- bind_rows(non_off_langs, non_off_langs_children) %>%
-    pull(vector)
-
-region <- list_census_regions(dataset, use_cache = FALSE) %>%
-    filter(level=="C") %>%
-    as_census_region_list
-
-census_data <- get_census(dataset='CA16',
-                          regions=region,
-                          vectors=non_off_langs_vectors,
-                          level='C', use_cache = FALSE)
-
-
-
-
-usethis::use_data(imm_mother_tongue, overwrite = TRUE)
+usethis::use_data(mother_tongue, overwrite = TRUE)
