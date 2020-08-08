@@ -29,13 +29,13 @@ the 2016 Census:
 ``` r
 library(canlang)
 head(mother_tongue)
-#>            mother_tongue  count
-#> 1              Afrikaans  10260
-#> 2             Akan (Twi)  13460
-#> 3               Albanian  26895
-#> 4 American Sign Language   2685
-#> 5                Amharic  22465
-#> 6                 Arabic 419890
+#>                 language count
+#> 1              Afrikaans 10260
+#> 2             Akan (Twi) 13460
+#> 3               Albanian 26895
+#> 4              Algonquin  1260
+#> 5 American Sign Language  2685
+#> 6                Amharic 22465
 ```
 
 The data set `lang_spoken_at_home` lists the counts of how many
@@ -45,11 +45,11 @@ home. This data was recorded in the 2016 Census:
 ``` r
 library(canlang)
 head(lang_spoken_at_home)
-#>          mother_tongue    count
-#> 1              English 22162865
-#> 2               French  6943800
-#> 3   Official languages 29106665
-#> 4 Aboriginal languages   118470
-#> 5            Algonquin      370
-#> 6            Atikamekw     5465
+#>                 language count
+#> 1              Afrikaans  4785
+#> 2             Akan (Twi)  5985
+#> 3               Albanian 13135
+#> 4              Algonquin   370
+#> 5 American Sign Language  3020
+#> 6                Amharic 12785
 ```

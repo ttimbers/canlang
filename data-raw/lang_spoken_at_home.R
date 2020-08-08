@@ -2,15 +2,14 @@
 
 library(cancensus)
 library(canlang)
+library(dplyr)
 
 # turn this into a map... later...
+non_off_lang_spoken_at_home <- get_language_data("CA16", "v_CA16_1370")
 off_lang_spoken_at_home <- get_language_data("CA16", "v_CA16_1361")
-aborig_lang_spoken_at_home <- get_language_data("CA16", "v_CA16_1373")
-non_off_non_aborig_lang_spoken_at_home <- get_language_data("CA16", "v_CA16_1370")
 
 lang_spoken_at_home <- bind_rows(off_lang_spoken_at_home,
-                                 aborig_lang_spoken_at_home,
-                                 non_off_non_aborig_lang_spoken_at_home)
+                                 non_off_lang_spoken_at_home) %>%
+    arrange(language)
 
-#v_CA16_1622
 usethis::use_data(lang_spoken_at_home, overwrite = TRUE)

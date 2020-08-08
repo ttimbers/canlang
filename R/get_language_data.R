@@ -26,14 +26,14 @@ get_language_data <- function(dataset, query_vector) {
         dplyr::filter(level == "C") %>%
         cancensus::as_census_region_list()
 
-    mother_tongue <- cancensus::get_census(dataset = dataset,
+    language <- cancensus::get_census(dataset = dataset,
                                 regions = region,
                                 vectors = langs_vectors,
                                 level = "C") %>%
         dplyr::select(-GeoUID, -`Region Name`, -Households, -Type, -`Area (sq km)`, -Population, -Dwellings) %>%
-        tidyr::pivot_longer(everything(), names_to = "mother_tongue", values_to = "count") %>%
-        separate(mother_tongue, into = c("junk", "mother_tongue"), sep = ": ") %>%
-        arrange(mother_tongue) %>%
-        select(-junk) %>%
-        filter(!str_detect(mother_tongue,"n.i.e|n.o.s"))
+        tidyr::pivot_longer(everything(), names_to = "language", values_to = "count") %>%
+        tidyr::separate(language, into = c("junk", "language"), sep = ": ") %>%
+        dplyr::arrange(language) %>%
+        dplyr::select(-junk) %>%
+        dplyr::filter(!stringr::str_detect(language,"n.i.e|n.o.s"))
 }
