@@ -30,10 +30,16 @@ devtools::install_github("ttimbers/canlang")
 ```
 ## Example
 
-The data set `mother_tongue` lists the count of mother tongue of all Canadians recorded in the 2016 Census:
+The data set `mother_tongue` lists the counts of how many Canadians report each language as their mother tongue. This data was recorded in the 2016 Census:
 
-```{r example}
+```{r example-1}
 library(canlang)
 head(mother_tongue)
 ```
 
+The data set `lang_spoken_at_home` lists the counts of how many Canadians report each language as the language they speak most often at home. This data was recorded in the 2016 Census:
+
+```{r example-2}
+library(canlang)
+head(lang_spoken_at_home)
+```
