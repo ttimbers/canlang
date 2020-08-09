@@ -3,22 +3,22 @@
     "path": "~/Documents/canlang/data-raw/can_lang.R",
     "project_path": "data-raw/can_lang.R",
     "type": "r_source",
-    "hash": "3608037762",
+    "hash": "0",
     "contents": "",
     "dirty": false,
     "created": 1596928540834.0,
     "source_on_save": false,
     "relative_order": 5,
     "properties": {
-        "cursorPosition": "71,0",
-        "scrollLine": "57"
+        "cursorPosition": "60,71",
+        "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1596948961,
+    "lastKnownWriteTime": 1596996186,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1596948961377,
+    "last_content_update": 1596996186671,
     "read_only": false,
     "read_only_alternatives": []
 }

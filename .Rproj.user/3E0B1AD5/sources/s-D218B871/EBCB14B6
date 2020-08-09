@@ -12,14 +12,14 @@
     "properties": {
         "expression": "can_lang",
         "caption": "can_lang",
-        "totalObservations": 182,
-        "displayedObservations": 182,
-        "variables": 6,
-        "cacheKey": "7531A0B9",
+        "totalObservations": "178",
+        "displayedObservations": "178",
+        "variables": "6",
+        "cacheKey": "46C4964B",
         "object": "can_lang",
         "environment": "",
-        "contentUrl": "grid_resource/gridviewer.html?env=&obj=can_lang&cache_key=7531A0B9&max_cols=50",
-        "preview": 0
+        "contentUrl": "grid_resource/gridviewer.html?env=&obj=can_lang&cache_key=46C4964B&max_cols=50",
+        "preview": "0"
     },
     "folds": "",
     "lastKnownWriteTime": 140693715175712,

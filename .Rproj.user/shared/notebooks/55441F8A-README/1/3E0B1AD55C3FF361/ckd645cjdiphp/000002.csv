@@ -1,4 +1,0 @@
-"0","library(canlang)"
-"0","glimpse(can_lang)"
-"2","Error in glimpse(can_lang) : could not find function ""glimpse""
-"

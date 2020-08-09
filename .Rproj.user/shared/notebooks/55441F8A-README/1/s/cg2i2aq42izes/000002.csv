@@ -1,0 +1,16 @@
+"0","library(ggplot2)"
+"2","Want to understand how all the pieces fit together? Read R for Data Science:
+https://r4ds.had.co.nz/
+"
+"0","ggplot(data = can_lang,"
+"0","       aes(x = most_at_home, y = mother_tongue, colour = category)) + "
+"0","    geom_point() +"
+"0","    scale_y_log10(name = ""Number of Canadians reporting the language \n as their mother tongue"", "
+"0","                       labels = scales::comma) +"
+"0","    scale_x_log10(name = ""Number of Canadians speaking the language \n as their primary language at home"", "
+"0","                       labels = scales::comma) +"
+"0","    annotation_logticks() +"
+"0","    theme_bw()"
+"2","Error in ggplot(data = can_lang, aes(x = most_at_home, y = mother_tongue,  : 
+  object 'can_lang' not found
+"

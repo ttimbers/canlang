@@ -58,7 +58,7 @@ lang_cat <- bind_rows(official, aboriginal) %>%
     filter(!language == "Aboriginal languages")
 
 can_lang <- left_join(can_lang, lang_cat) %>%
-    replace_na(list(category = "Non-Official & Non-Aboriginal")) %>%
+    replace_na(list(category = "Non-Official & Non-Aboriginal languages")) %>%
     select(category,
            language,
            mother_tongue,

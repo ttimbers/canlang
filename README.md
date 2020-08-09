@@ -1,11 +1,13 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# canlang
+# canlang <a href='https://ttimbers.github.io/canlang'><img src='man/figures/hex-canlang.png' align="right" height="138.5" /></a>
 
 <!-- badges: start -->
 
 <!-- badges: end -->
+
+<br>
 
 The goal of {canlang} is to easily share language data collected in the
 2016 Canadian census. This data was retreived from the 2016 Canadian
@@ -23,7 +25,7 @@ You can install the development version from
 devtools::install_github("ttimbers/canlang")
 ```
 
-## Example
+## Example usage
 
 The data set `can_lang` lists the counts of how many Canadians report
 each language as their mother tongue, which language they speak most
@@ -34,13 +36,13 @@ Census:
 ``` r
 library(canlang)
 head(can_lang)
-#>                        category               language mother_tongue
-#> 1 Non-Official & Non-Aboriginal              Afrikaans         10260
-#> 2 Non-Official & Non-Aboriginal             Akan (Twi)         13460
-#> 3 Non-Official & Non-Aboriginal               Albanian         26895
-#> 4          Aboriginal languages              Algonquin          1260
-#> 5 Non-Official & Non-Aboriginal American Sign Language          2685
-#> 6 Non-Official & Non-Aboriginal                Amharic         22465
+#>                                  category               language mother_tongue
+#> 1 Non-Official & Non-Aboriginal languages              Afrikaans         10260
+#> 2 Non-Official & Non-Aboriginal languages             Akan (Twi)         13460
+#> 3 Non-Official & Non-Aboriginal languages               Albanian         26895
+#> 4                    Aboriginal languages              Algonquin          1260
+#> 5 Non-Official & Non-Aboriginal languages American Sign Language          2685
+#> 6 Non-Official & Non-Aboriginal languages                Amharic         22465
 #>   most_at_home most_at_work lang_known
 #> 1         4785           85      23415
 #> 2         5985           25      22150
@@ -49,6 +51,21 @@ head(can_lang)
 #> 5         3020         1145      21930
 #> 6        12785          200      33670
 ```
+
+``` r
+library(ggplot2)
+ggplot2::ggplot(data = can_lang,
+       aes(x = most_at_home, y = mother_tongue, colour = category)) + 
+    geom_point() +
+    scale_y_log10(name = "Number of Canadians reporting the \n language as their mother tongue", 
+                       labels = scales::comma) +
+    scale_x_log10(name = "Number of Canadians speaking the language \n as their primary language at home", 
+                       labels = scales::comma) +
+    annotation_logticks() +
+    theme_bw()
+```
+
+<img src="man/figures/README-example plot from data-1.png" width="100%" />
 
 ## References
 
