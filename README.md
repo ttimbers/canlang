@@ -69,6 +69,14 @@ ggplot2::ggplot(data = can_lang,
 
 ## References
 
-von Bergmann, J., Aaron Jacobs, Dmitry Shkolnik (2020). cancensus: R
-package to access, retrieve, and work with Canadian Census data and
-geography. v0.3.2.
+**Data originally published in:**
+
+  - *Source: Statistics Canada, Census of Population, 2016. Reproduced
+    and distributed on an “as is” basis with the permission of
+    Statistics Canada.*
+
+**Package development resources:**
+
+  - von Bergmann, J., Aaron Jacobs, Dmitry Shkolnik (2020). cancensus: R
+    package to access, retrieve, and work with Canadian Census data and
+    geography. v0.3.2.
