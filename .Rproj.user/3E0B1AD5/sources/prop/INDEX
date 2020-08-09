@@ -1,6 +1,7 @@
 ~="5A0865E1"
 ~%2FDocuments%2Fcanlang%2FDESCRIPTION="45673086"
 ~%2FDocuments%2Fcanlang%2FNAMESPACE="6C4CFDC0"
+~%2FDocuments%2Fcanlang%2FR%2Fget_child_langs.R="7695A0AE"
 ~%2FDocuments%2Fcanlang%2FR%2Fget_language_data.R="636C8006"
 ~%2FDocuments%2Fcanlang%2FR%2Futils-pipe.R="FE983FED"
 ~%2FDocuments%2Fcanlang%2FREADME.Rmd="40D85970"
@@ -10,3 +11,4 @@
 ~%2FDocuments%2Fcanlang%2Fdata-raw%2Fimm_mother_tongues.R="5C925927"
 ~%2FDocuments%2Fcanlang%2Fdata-raw%2Flang_spoken_at_home.R="A8A6A130"
 ~%2FDocuments%2Fcanlang%2Fdata-raw%2Fmother_tongue.R="B5457169"
+~%2FDocuments%2Fcanlang%2Fman%2Fget_language_data.Rd="BA902714"

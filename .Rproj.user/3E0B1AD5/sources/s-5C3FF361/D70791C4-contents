@@ -11,3 +11,6 @@ explore %>%
 
 # "Language used most often at work for the population in private households aged 15 years and over who worked since January 1, 2015"
 # "Knowledge of languages for the population in private households"    
+
+explore %>% 
+    filter(parent_vector == "v_CA16_566")

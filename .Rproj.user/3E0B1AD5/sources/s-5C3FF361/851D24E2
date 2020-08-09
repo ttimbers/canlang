@@ -1,24 +1,24 @@
 {
-    "id": "0A3A7344",
+    "id": "851D24E2",
     "path": "~/Documents/canlang/README.Rmd",
     "project_path": "README.Rmd",
     "type": "r_markdown",
-    "hash": "1994730161",
+    "hash": "0",
     "contents": "",
-    "dirty": false,
-    "created": 1596915248865.0,
+    "dirty": true,
+    "created": 1596949020819.0,
     "source_on_save": false,
-    "relative_order": 1,
+    "relative_order": 5,
     "properties": {
-        "cursorPosition": "20,156",
-        "scrollLine": "12"
+        "cursorPosition": "37,3",
+        "scrollLine": "9"
     },
     "folds": "",
     "lastKnownWriteTime": 1596932082,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1596932082586,
+    "last_content_update": 1596949070823,
     "read_only": false,
     "read_only_alternatives": []
 }

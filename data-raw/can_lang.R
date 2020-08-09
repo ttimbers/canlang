@@ -2,7 +2,7 @@
 library(cancensus)
 library(canlang)
 library(dplyr)
-
+library(tidyr)
 
 # Mother tongue -----------------------------------------------------------
 
@@ -50,5 +50,24 @@ can_lang <- left_join(mother_tongue,
                       lang_spoken_at_home) %>%
     left_join(lang_spoken_at_work) %>%
     left_join(lang_known)
+
+
+# Add language categories -------------------------------------------------
+official <- get_child_langs("CA16", "v_CA16_554")
+aboriginal <- eg <- get_child_langs("CA16", "v_CA16_566")
+lang_cat <- bind_rows(official, aboriginal) %>%
+    filter(!language == "Aboriginal languages")
+
+can_lang <- left_join(can_lang, lang_cat) %>%
+    replace_na(list(category = "Non-Official & Non-Aboriginal")) %>%
+    select(category,
+           language,
+           mother_tongue,
+           most_at_home,
+           most_at_work,
+           lang_known)
+
+
+# Write data --------------------------------------------------------------
 
 usethis::use_data(can_lang, overwrite = TRUE)

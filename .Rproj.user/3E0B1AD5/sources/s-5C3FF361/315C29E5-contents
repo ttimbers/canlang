@@ -4,7 +4,7 @@
 \alias{get_language_data}
 \title{Get census language data at the Canadian level in a tidy format.}
 \usage{
-get_language_data(dataset, query_vector)
+get_language_data(dataset, query_vector, col_name)
 }
 \arguments{
 \item{dataset}{character vector of the data set name (e.g., "CA16")}

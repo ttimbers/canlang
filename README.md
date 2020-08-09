@@ -34,13 +34,20 @@ Census:
 ``` r
 library(canlang)
 head(can_lang)
-#>                 language mother_tongue most_at_home most_at_work lang_known
-#> 1              Afrikaans         10260         4785           85      23415
-#> 2             Akan (Twi)         13460         5985           25      22150
-#> 3               Albanian         26895        13135          345      31930
-#> 4              Algonquin          1260          370           40       2480
-#> 5 American Sign Language          2685         3020         1145      21930
-#> 6                Amharic         22465        12785          200      33670
+#>                        category               language mother_tongue
+#> 1 Non-Official & Non-Aboriginal              Afrikaans         10260
+#> 2 Non-Official & Non-Aboriginal             Akan (Twi)         13460
+#> 3 Non-Official & Non-Aboriginal               Albanian         26895
+#> 4          Aboriginal languages              Algonquin          1260
+#> 5 Non-Official & Non-Aboriginal American Sign Language          2685
+#> 6 Non-Official & Non-Aboriginal                Amharic         22465
+#>   most_at_home most_at_work lang_known
+#> 1         4785           85      23415
+#> 2         5985           25      22150
+#> 3        13135          345      31930
+#> 4          370           40       2480
+#> 5         3020         1145      21930
+#> 6        12785          200      33670
 ```
 
 ## References
