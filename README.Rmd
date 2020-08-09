@@ -37,11 +37,13 @@ library(canlang)
 head(can_lang)
 ```
 
-```{r example plot from data, warning = FALSE, fig.height = 3}
+```{r example plot from data, warning = FALSE, fig.height = 3.5, fig.retina = 2}
 library(ggplot2)
 ggplot2::ggplot(data = can_lang,
-       aes(x = most_at_home, y = mother_tongue, colour = category)) + 
-    geom_point() +
+       aes(x = most_at_home, y = mother_tongue, 
+           colour = category, shape = category)) + 
+    geom_point(alpha = 0.7) +
+    scale_color_manual(values = c("blue3","red3","black")) +
     scale_y_log10(name = "Number of Canadians reporting the \n language as their mother tongue", 
                        labels = scales::comma) +
     scale_x_log10(name = "Number of Canadians speaking the language \n as their primary language at home", 

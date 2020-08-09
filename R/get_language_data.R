@@ -7,7 +7,7 @@
 #' @export
 #'
 #' @examples
-#'\dontrun{
+#' \dontrun{
 #' library(canlang)
 #' options(cancensus.api_key = "your_api_key")
 #' language_data("CA16", "v_CA16_815")

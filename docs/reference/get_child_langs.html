@@ -89,7 +89,12 @@
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        
+        <li>
+  <a href="https://github.com/ttimbers/canlang/">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
       </ul>
       
     </div><!--/.nav-collapse -->
@@ -104,7 +109,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Get the languages that are children of a parent vector</h1>
-    
+    <small class="dont-index">Source: <a href='https://github.com/ttimbers/canlang/blob/master/R/get_child_langs.R'><code>R/get_child_langs.R</code></a></small>
     <div class="hidden name"><code>get_child_langs.Rd</code></div>
     </div>
 
@@ -132,9 +137,11 @@
     <p>a tidy data frame with two columns: 1) parent vector label, and 2) child languages</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>canlang</span>)
+    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
+<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>canlang</span>)
 <span class='fu'><a href='https://rdrr.io/r/base/options.html'>options</a></span>(<span class='kw'>cancensus.api_key</span> <span class='kw'>=</span> <span class='st'>"your_api_key"</span>)
-<span class='fu'>get_child_langs</span>(<span class='st'>"CA16"</span>, <span class='st'>"v_CA16_566"</span>)</div><div class='output co'>#&gt; <span class='message'>Querying CensusMapper API for regions data...</span></div><div class='output co'>#&gt; <span class='error'>Error in cache_path("CM_data_", digest::digest(param_string, algo = "md5"),     ".rda"): Corrupt 'cancensus.cache_path' option. Must be a path.FALSE</span></div></pre>
+<span class='fu'>get_child_langs</span>(<span class='st'>"CA16"</span>, <span class='st'>"v_CA16_566"</span>)
+}</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

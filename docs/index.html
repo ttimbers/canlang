@@ -47,7 +47,14 @@
   <a href="reference/index.html">Reference</a>
 </li>
       </ul>
-<ul class="nav navbar-nav navbar-right"></ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+  <a href="https://github.com/ttimbers/canlang/">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
 </div>
 <!--/.nav-collapse -->
   </div>
@@ -65,7 +72,6 @@
 </h1></div>
 <!-- badges: start -->
 <!-- badges: end -->
-<p><br></p>
 <p>The goal of {canlang} is to easily share language data collected in the 2016 Canadian census. This data was retreived from the 2016 Canadian census data set using the {<a href="https://mountainmath.github.io/cancensus/index.html">cancensus</a>} R package.</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
@@ -96,8 +102,10 @@
 <span class="co">#&gt; 6        12785          200      33670</span></pre></div>
 <div class="sourceCode" id="cb3"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">ggplot2</span>)
 <span class="kw pkg">ggplot2</span><span class="kw ns">::</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="kw">data</span> <span class="kw">=</span> <span class="no">can_lang</span>,
-       <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="kw">x</span> <span class="kw">=</span> <span class="no">most_at_home</span>, <span class="kw">y</span> <span class="kw">=</span> <span class="no">mother_tongue</span>, <span class="kw">colour</span> <span class="kw">=</span> <span class="no">category</span>)) +
-    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span>() +
+       <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="kw">x</span> <span class="kw">=</span> <span class="no">most_at_home</span>, <span class="kw">y</span> <span class="kw">=</span> <span class="no">mother_tongue</span>,
+           <span class="kw">colour</span> <span class="kw">=</span> <span class="no">category</span>, <span class="kw">shape</span> <span class="kw">=</span> <span class="no">category</span>)) +
+    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span>(<span class="kw">alpha</span> <span class="kw">=</span> <span class="fl">0.7</span>) +
+    <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html">scale_color_manual</a></span>(<span class="kw">values</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"blue3"</span>,<span class="st">"red3"</span>,<span class="st">"black"</span>)) +
     <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_log10</a></span>(<span class="kw">name</span> <span class="kw">=</span> <span class="st">"Number of Canadians reporting the \n language as their mother tongue"</span>,
                        <span class="kw">labels</span> <span class="kw">=</span> <span class="kw pkg">scales</span><span class="kw ns">::</span><span class="no"><a href="https://scales.r-lib.org//reference/label_number.html">comma</a></span>) +
     <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_log10</a></span>(<span class="kw">name</span> <span class="kw">=</span> <span class="st">"Number of Canadians speaking the language \n as their primary language at home"</span>,
@@ -115,7 +123,14 @@
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
-    <div class="license">
+    <div class="links">
+<h2>Links</h2>
+<ul class="list-unstyled">
+<li>Browse source code at <br><a href="https://github.com/ttimbers/canlang/">https://​github.com/​ttimbers/​canlang/​</a>
+</li>
+</ul>
+</div>
+<div class="license">
 <h2>License</h2>
 <ul class="list-unstyled">
 <li>

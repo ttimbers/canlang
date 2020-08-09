@@ -18,7 +18,9 @@ a tidy data frame with two columns: 1) parent vector label, and 2) child languag
 Get the languages that are children of a parent vector
 }
 \examples{
+\dontrun{
 library(canlang)
 options(cancensus.api_key = "your_api_key")
 get_child_langs("CA16", "v_CA16_566")
+}
 }
