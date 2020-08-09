@@ -24,7 +24,6 @@ lang_spoken_at_home <- bind_rows(off_lang_spoken_at_home,
     rename(most_at_home = count)
 
 
-
 # Language spoken most often at work --------------------------------------
 
 non_off_lang_spoken_at_work <- get_language_data("CA16", "v_CA16_5867")

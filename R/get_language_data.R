@@ -35,5 +35,5 @@ get_language_data <- function(dataset, query_vector) {
         tidyr::separate(language, into = c("junk", "language"), sep = ": ") %>%
         dplyr::arrange(language) %>%
         dplyr::select(-junk) %>%
-        dplyr::filter(!stringr::str_detect(language,"n.i.e|n.o.s"))
+        dplyr::filter(!stringr::str_detect(language,"n.i.e|n.o.s|languages"))
 }
