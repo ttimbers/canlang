@@ -1,0 +1,32 @@
+{
+    "id": "68449F89",
+    "path": null,
+    "project_path": null,
+    "type": "r_dataframe",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1596930724522.0,
+    "source_on_save": false,
+    "relative_order": 12,
+    "properties": {
+        "expression": "lang_spoken_at_work",
+        "caption": "lang_spoken_at_work",
+        "totalObservations": "184",
+        "displayedObservations": "184",
+        "variables": "2",
+        "cacheKey": "F88B579A",
+        "object": "lang_spoken_at_work",
+        "environment": "",
+        "contentUrl": "grid_resource/gridviewer.html?env=&obj=lang_spoken_at_work&cache_key=F88B579A&max_cols=50",
+        "preview": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 2308706284093848098,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1596930724522,
+    "read_only": false,
+    "read_only_alternatives": []
+}

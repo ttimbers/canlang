@@ -64,7 +64,7 @@
 <a href="#canlang" class="anchor"></a>canlang</h1></div>
 <!-- badges: start -->
 <!-- badges: end -->
-<p>The goal of canlang is to easily share language data collected in the 2016 Canadian census.</p>
+<p>The goal of {canlang} is to easily share language data collected in the 2016 Canadian census. This data was retreived from the 2016 Canadian census data set using the {<a href="https://mountainmath.github.io/cancensus/index.html">cancensus</a>} R package.</p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
@@ -75,26 +75,21 @@
 <div id="example" class="section level2">
 <h2 class="hasAnchor">
 <a href="#example" class="anchor"></a>Example</h2>
-<p>The data set <code>mother_tongue</code> lists the counts of how many Canadians report each language as their mother tongue. This data was recorded in the 2016 Census:</p>
+<p>The data set <code>can_lang</code> lists the counts of how many Canadians report each language as their mother tongue, which language they speak most often at home, which language they use most often at work, and which language they have knowledge for. This data was recorded in the 2016 Census:</p>
 <div class="sourceCode" id="cb2"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">canlang</span>)
-<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="no">mother_tongue</span>)
-<span class="co">#&gt;                 language count</span>
-<span class="co">#&gt; 1              Afrikaans 10260</span>
-<span class="co">#&gt; 2             Akan (Twi) 13460</span>
-<span class="co">#&gt; 3               Albanian 26895</span>
-<span class="co">#&gt; 4              Algonquin  1260</span>
-<span class="co">#&gt; 5 American Sign Language  2685</span>
-<span class="co">#&gt; 6                Amharic 22465</span></pre></div>
-<p>The data set <code>lang_spoken_at_home</code> lists the counts of how many Canadians report each language as the language they speak most often at home. This data was recorded in the 2016 Census:</p>
-<div class="sourceCode" id="cb3"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">canlang</span>)
-<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="no">lang_spoken_at_home</span>)
-<span class="co">#&gt;                 language count</span>
-<span class="co">#&gt; 1              Afrikaans  4785</span>
-<span class="co">#&gt; 2             Akan (Twi)  5985</span>
-<span class="co">#&gt; 3               Albanian 13135</span>
-<span class="co">#&gt; 4              Algonquin   370</span>
-<span class="co">#&gt; 5 American Sign Language  3020</span>
-<span class="co">#&gt; 6                Amharic 12785</span></pre></div>
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="no">can_lang</span>)
+<span class="co">#&gt;                 language mother_tongue most_at_home most_at_work lang_known</span>
+<span class="co">#&gt; 1              Afrikaans         10260         4785           85      23415</span>
+<span class="co">#&gt; 2             Akan (Twi)         13460         5985           25      22150</span>
+<span class="co">#&gt; 3               Albanian         26895        13135          345      31930</span>
+<span class="co">#&gt; 4              Algonquin          1260          370           40       2480</span>
+<span class="co">#&gt; 5 American Sign Language          2685         3020         1145      21930</span>
+<span class="co">#&gt; 6                Amharic         22465        12785          200      33670</span></pre></div>
+</div>
+<div id="references" class="section level2">
+<h2 class="hasAnchor">
+<a href="#references" class="anchor"></a>References</h2>
+<p>von Bergmann, J., Aaron Jacobs, Dmitry Shkolnik (2020). cancensus: R package to access, retrieve, and work with Canadian Census data and geography. v0.3.2.</p>
 </div>
 </div>
   </div>

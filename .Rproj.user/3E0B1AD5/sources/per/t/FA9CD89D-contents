@@ -1,0 +1,45 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# canlang
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of canlang is to easily share language data collected in the 2016 Canadian census.
+
+## Installation
+
+You can install the development version from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("ttimbers/canlang")
+```
+## Example
+
+The data set `mother_tongue` lists the counts of how many Canadians report each language as their mother tongue. This data was recorded in the 2016 Census:
+
+```{r example-1}
+library(canlang)
+head(mother_tongue)
+```
+
+The data set `lang_spoken_at_home` lists the counts of how many Canadians report each language as the language they speak most often at home. This data was recorded in the 2016 Census:
+
+```{r example-2}
+library(canlang)
+head(lang_spoken_at_home)
+```

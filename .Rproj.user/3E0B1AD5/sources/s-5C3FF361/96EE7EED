@@ -1,0 +1,24 @@
+{
+    "id": "96EE7EED",
+    "path": "~/Documents/canlang/data-raw/can_lang.R",
+    "project_path": "data-raw/can_lang.R",
+    "type": "r_source",
+    "hash": "1034688552",
+    "contents": "",
+    "dirty": false,
+    "created": 1596928540834.0,
+    "source_on_save": false,
+    "relative_order": 5,
+    "properties": {
+        "cursorPosition": "23,11",
+        "scrollLine": "21"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1596931392,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1596931392048,
+    "read_only": false,
+    "read_only_alternatives": []
+}

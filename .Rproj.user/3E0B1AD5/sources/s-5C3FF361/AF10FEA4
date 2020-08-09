@@ -1,0 +1,32 @@
+{
+    "id": "AF10FEA4",
+    "path": null,
+    "project_path": null,
+    "type": "r_dataframe",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1596929671561.0,
+    "source_on_save": false,
+    "relative_order": 10,
+    "properties": {
+        "expression": "non_off_moth_tongue",
+        "caption": "non_off_moth_tongue",
+        "totalObservations": 179,
+        "displayedObservations": 179,
+        "variables": 2,
+        "cacheKey": "3705B74A",
+        "object": "non_off_moth_tongue",
+        "environment": "",
+        "contentUrl": "grid_resource/gridviewer.html?env=&obj=non_off_moth_tongue&cache_key=3705B74A&max_cols=50",
+        "preview": 0
+    },
+    "folds": "",
+    "lastKnownWriteTime": 140693715175712,
+    "encoding": "",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1596929671561,
+    "read_only": false,
+    "read_only_alternatives": []
+}
