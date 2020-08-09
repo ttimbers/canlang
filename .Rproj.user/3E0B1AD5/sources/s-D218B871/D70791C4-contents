@@ -2,7 +2,7 @@ library(cancensus)
 library(dplyr)
 library(stringr)
 
-explore <- list_census_vectors(dataset)
+explore <- list_census_vectors("CA16")
 explore %>% 
     select(details) %>% 
     filter(str_detect(details, "language")) %>% 

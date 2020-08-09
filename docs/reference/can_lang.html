@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • canlang</title>
+<title>Canadian-level language data collected from the 2016 Canadian Census. — can_lang • canlang</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,10 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Canadian-level language data collected from the 2016 Canadian Census. — can_lang" />
+<meta property="og:description" content="can_lang lists the counts of how many Canadians report each language as their mother tongue,
+which language they speak most often at home, which language they use most often at work, and
+which language they have knowledge for. This data was recorded in the 2016 Canadian Census." />
 
 
 
@@ -58,7 +61,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -105,54 +108,39 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Canadian-level language data collected from the 2016 Canadian Census.</h1>
+    <small class="dont-index">Source: <a href='https://github.com/ttimbers/canlang/blob/master/R/can_lang.R'><code>R/can_lang.R</code></a></small>
+    <div class="hidden name"><code>can_lang.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    <p><code>can_lang</code> lists the counts of how many Canadians report each language as their mother tongue,
+which language they speak most often at home, which language they use most often at work, and
+which language they have knowledge for. This data was recorded in the 2016 Canadian Census.</p>
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
+    <pre class="usage"><span class='no'>can_lang</span></pre>
 
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="can_lang.html">can_lang</a></code> </p>
-        </td>
-        <td><p>Canadian-level language data collected from the 2016 Canadian Census.</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="get_child_langs.html">get_child_langs()</a></code> </p>
-        </td>
-        <td><p>Get the languages that are children of a parent vector</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="get_language_data.html">get_language_data()</a></code> </p>
-        </td>
-        <td><p>Get census language data at the Canadian level in a tidy format.</p></td>
-      </tr>
-    </tbody>
-    </table>
+
+    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
+
+    <p>A tibble with 178 rows and 6 variables:</p><dl'>
+<dt>category</dt><dd><p>Higher level language category, describing whether the language is an Official Canadian language (e.g., English or French), an Aboriginal language, or a Non-Official and Non-Aboriginal language.</p></dd>
+<dt>language</dt><dd><p>Language queried about on the Canadian Census.</p></dd>
+<dt>mother_tongue</dt><dd><p>Total Count of Canadians from the Census who reported the language as their mother tongue (excluding institutional residents - 100% data). Mother tongue is generally defined as the language someone was exposed to since birth.</p></dd>
+<dt>most_at_home</dt><dd><p>Total Count of Canadians from the Census who reported the language as spoken most often at home (excluding institutional residents - 100% data).</p></dd>
+<dt>most_at_work</dt><dd><p>Total Count of Canadians from the Census who reported the language as used most often at work for the population in private households aged 15 years and over who worked since January 1, 2015 (25% sample data).</p></dd>
+<dt>lang_known</dt><dd><p>Total Count of Canadians from the Census who reported knowledge of language for the population in private households (25% sample data).</p></dd>
+
+</dl>
+
+    <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
+
+    <p>Source: Statistics Canada, Census of Population, 2016. Reproduced and distributed on an "as is" basis with the permission of Statistics Canada.</p>
+
   </div>
-
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>

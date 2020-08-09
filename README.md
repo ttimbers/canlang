@@ -71,9 +71,9 @@ ggplot2::ggplot(data = can_lang,
 
 **Data originally published in:**
 
-  - *Source: Statistics Canada, Census of Population, 2016. Reproduced
+  - Source: Statistics Canada, Census of Population, 2016. Reproduced
     and distributed on an “as is” basis with the permission of
-    Statistics Canada.*
+    Statistics Canada.
 
 **Package development resources:**
 
