@@ -7,6 +7,8 @@
 
 [![R build
 status](https://github.com/ttimbers/canlang/workflows/R-CMD-check/badge.svg)](https://github.com/ttimbers/canlang/actions)
+[![R build
+status](https://github.com/ttimbers/canlang/workflows/pkgdown/badge.svg)](https://github.com/ttimbers/canlang/actions)
 <!-- badges: end -->
 
 The goal of {canlang} is to easily share language data collected in the
