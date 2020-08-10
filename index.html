@@ -73,6 +73,11 @@
 <!-- badges: start -->
 
 <p>The goal of {canlang} is to easily share language data collected in the 2016 Canadian census. This data was retreived from the 2016 Canadian census data set using the {<a href="https://mountainmath.github.io/cancensus/index.html">cancensus</a>} R package.</p>
+<p>This package contains two data sets:</p>
+<ol>
+<li><p><a href="#example-usage-of-can_lang"><code>can_lang</code></a>: Contains the counts of the total number of Canadians that report each language as their mother tongue, which language they speak most often at home, which language they use most often at work, and which language they have knowledge for.</p></li>
+<li><p><a href="#example-usage-of-region_lang"><code>region_lang</code></a>: For each census division, it contains the counts of how many Canadians report each language as their mother tongue, which language they speak most often at home, which language they use most often at work, and which language they have knowledge for.</p></li>
+</ol>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
@@ -80,26 +85,27 @@
 <div class="sourceCode" id="cb1"><pre class="r"><span class="co"># install.packages("devtools")</span>
 <span class="kw pkg">devtools</span><span class="kw ns">::</span><span class="fu">install_github</span>(<span class="st">"ttimbers/canlang"</span>)</pre></div>
 </div>
-<div id="example-usage" class="section level2">
+<div id="example-usage-of-can_lang" class="section level2">
 <h2 class="hasAnchor">
-<a href="#example-usage" class="anchor"></a>Example usage</h2>
-<p>The data set <code>can_lang</code> lists the counts of how many Canadians report each language as their mother tongue, which language they speak most often at home, which language they use most often at work, and which language they have knowledge for. This data was recorded in the 2016 Census:</p>
+<a href="#example-usage-of-can_lang" class="anchor"></a>Example usage of <code>can_lang</code>
+</h2>
+<p>The data set <code>can_lang</code> contains the counts of the total number of Canadians that report each language as their mother tongue, which language they speak most often at home, which language they use most often at work, and which language they have knowledge for. This data was recorded in the 2016 Census:</p>
 <div class="sourceCode" id="cb2"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">canlang</span>)
 <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="no">can_lang</span>)
-<span class="co">#&gt;                                  category               language mother_tongue</span>
-<span class="co">#&gt; 1 Non-Official &amp; Non-Aboriginal languages              Afrikaans         10260</span>
-<span class="co">#&gt; 2 Non-Official &amp; Non-Aboriginal languages             Akan (Twi)         13460</span>
-<span class="co">#&gt; 3 Non-Official &amp; Non-Aboriginal languages               Albanian         26895</span>
-<span class="co">#&gt; 4                    Aboriginal languages              Algonquin          1260</span>
-<span class="co">#&gt; 5 Non-Official &amp; Non-Aboriginal languages American Sign Language          2685</span>
-<span class="co">#&gt; 6 Non-Official &amp; Non-Aboriginal languages                Amharic         22465</span>
-<span class="co">#&gt;   most_at_home most_at_work lang_known</span>
-<span class="co">#&gt; 1         4785           85      23415</span>
-<span class="co">#&gt; 2         5985           25      22150</span>
-<span class="co">#&gt; 3        13135          345      31930</span>
-<span class="co">#&gt; 4          370           40       2480</span>
-<span class="co">#&gt; 5         3020         1145      21930</span>
-<span class="co">#&gt; 6        12785          200      33670</span></pre></div>
+<span class="co">#&gt;                                  category                       language</span>
+<span class="co">#&gt; 1                    Aboriginal languages   Aboriginal languages, n.o.s.</span>
+<span class="co">#&gt; 2 Non-Official &amp; Non-Aboriginal languages                      Afrikaans</span>
+<span class="co">#&gt; 3 Non-Official &amp; Non-Aboriginal languages Afro-Asiatic languages, n.i.e.</span>
+<span class="co">#&gt; 4 Non-Official &amp; Non-Aboriginal languages                     Akan (Twi)</span>
+<span class="co">#&gt; 5 Non-Official &amp; Non-Aboriginal languages                       Albanian</span>
+<span class="co">#&gt; 6                    Aboriginal languages   Algonquian languages, n.i.e.</span>
+<span class="co">#&gt;   mother_tongue most_at_home most_at_work lang_known</span>
+<span class="co">#&gt; 1           590          235           30        665</span>
+<span class="co">#&gt; 2         10260         4785           85      23415</span>
+<span class="co">#&gt; 3          1150          445           10       2775</span>
+<span class="co">#&gt; 4         13460         5985           25      22150</span>
+<span class="co">#&gt; 5         26895        13135          345      31930</span>
+<span class="co">#&gt; 6            45           10            0        120</span></pre></div>
 <div class="sourceCode" id="cb3"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">ggplot2</span>)
 <span class="kw pkg">ggplot2</span><span class="kw ns">::</span><span class="fu">ggplot</span>(<span class="kw">data</span> <span class="kw">=</span> <span class="no">can_lang</span>,
        <span class="fu">aes</span>(<span class="kw">x</span> <span class="kw">=</span> <span class="no">most_at_home</span>, <span class="kw">y</span> <span class="kw">=</span> <span class="no">mother_tongue</span>,
@@ -135,6 +141,27 @@
 <h2 class="hasAnchor">
 <a href="#how-this-was-made" class="anchor"></a>How this was made</h2>
 <p>The <a href="https://github.com/ttimbers/canlang/tree/master/data-raw"><code>data-raw</code></a> directory contains the the scripts necessary to create everything in this package, including the R data objects and the plain text, excel and SQLite database files.</p>
+</div>
+<div id="example-usage-of-region_lang" class="section level2">
+<h2 class="hasAnchor">
+<a href="#example-usage-of-region_lang" class="anchor"></a>Example usage of <code>region_lang</code>
+</h2>
+<p>For each census division, the data set <code>region_lang</code> contains the counts of how many Canadians report each language as their mother tongue, which language they speak most often at home, which language they use most often at work, and which language they have knowledge for.</p>
+<div class="sourceCode" id="cb4"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">canlang</span>)
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">dplyr</span>)
+<span class="no">region_lang</span> <span class="kw">%&gt;%</span>
+    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(<span class="no">region</span> <span class="kw">==</span> <span class="st">"Greater Vancouver (RD)"</span>) <span class="kw">%&gt;%</span>
+    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span>(<span class="fu"><a href="https://dplyr.tidyverse.org/reference/desc.html">desc</a></span>(<span class="no">mother_tongue</span>)) <span class="kw">%&gt;%</span>
+    <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>()
+<span class="co">#&gt; # A tibble: 6 x 7</span>
+<span class="co">#&gt;   region  category   language mother_tongue most_at_home most_at_work lang_known</span>
+<span class="co">#&gt;   &lt;fct&gt;   &lt;chr&gt;      &lt;chr&gt;            &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;      &lt;dbl&gt;</span>
+<span class="co">#&gt; 1 Greate… Official … English        1316635      1622735      1330560    2289520</span>
+<span class="co">#&gt; 2 Greate… Non-Offic… Cantone…        184365       132185        22890     223705</span>
+<span class="co">#&gt; 3 Greate… Non-Offic… Mandarin        174920       138680        23190     250175</span>
+<span class="co">#&gt; 4 Greate… Non-Offic… Punjabi…        151205       104855        13130     187530</span>
+<span class="co">#&gt; 5 Greate… Non-Offic… Tagalog…         66830        30700          635      96295</span>
+<span class="co">#&gt; 6 Greate… Non-Offic… Korean           45990        34225         5075      50640</span></pre></div>
 </div>
 <div id="references" class="section level2">
 <h2 class="hasAnchor">
