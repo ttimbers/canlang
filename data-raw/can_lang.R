@@ -3,6 +3,7 @@ library(cancensus)
 library(canlang)
 library(dplyr)
 library(here)
+library(openxlsx)
 library(readr)
 library(readxl)
 library(tidyr)
@@ -92,6 +93,7 @@ readr::write_delim(can_lang, here::here("inst", "extdata", "can_lang.tsv"),
                  col_names = FALSE)
 
 # Excel file
-# TBD
+write.xlsx(can_lang, here::here("inst", "extdata", "can_lang.xlsx"))
 
 # SQLite file
+#TBD
