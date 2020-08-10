@@ -22,6 +22,12 @@ knitr::opts_chunk$set(
 
 The goal of {canlang} is to easily share language data collected in the 2016 Canadian census. This data was retreived from the 2016 Canadian census data set using the {[cancensus](https://mountainmath.github.io/cancensus/index.html)} R package.
 
+This package contains two data sets:
+
+1. [`can_lang`](#example-usage-of-can_lang): Contains the counts of the total number of Canadians that report each language as their mother tongue, which language they speak most often at home, which language they use most often at work, and which language they have knowledge for.
+
+2. [`region_lang`](#example-usage-of-region_lang): For each census division, it contains the counts of how many Canadians report each language as their mother tongue, which language they speak most often at home, which language they use most often at work, and which language they have knowledge for. 
+
 ## Installation
 
 You can install the development version from [GitHub](https://github.com/) with:
@@ -30,11 +36,11 @@ You can install the development version from [GitHub](https://github.com/) with:
 # install.packages("devtools")
 devtools::install_github("ttimbers/canlang")
 ```
-## Example usage
+## Example usage of `can_lang`
 
-The data set `can_lang` lists the counts of how many Canadians report each language as their mother tongue, which language they speak most often at home, which language they use most often at work, and which language they have knowledge for. This data was recorded in the 2016 Census:
+The data set `can_lang` contains the counts of the total number of Canadians that report each language as their mother tongue, which language they speak most often at home, which language they use most often at work, and which language they have knowledge for. This data was recorded in the 2016 Census:
 
-```{r example-1}
+```{r example-can_lang}
 library(canlang)
 head(can_lang)
 ```
@@ -67,6 +73,19 @@ We have included several different plain text files, an excel files and a SQLite
 ## How this was made
 
 The [`data-raw`](https://github.com/ttimbers/canlang/tree/master/data-raw) directory contains the the scripts necessary to create everything in this package, including the R data objects and the plain text, excel and SQLite database files.
+
+## Example usage of `region_lang`
+
+For each census division, the data set `region_lang` contains the counts of how many Canadians report each language as their mother tongue, which language they speak most often at home, which language they use most often at work, and which language they have knowledge for. 
+
+```{r example-region_lang, warning = FALSE, message = FALSE}
+library(canlang)
+library(dplyr)
+region_lang %>% 
+    filter(region == "Greater Vancouver (RD)") %>% 
+    arrange(desc(mother_tongue)) %>% 
+    head()
+```
 
 ## References
 

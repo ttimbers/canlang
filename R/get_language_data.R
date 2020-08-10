@@ -37,7 +37,7 @@ get_language_data <- function(dataset, query_vector, region_level = "C") {
             tidyr::separate(language, into = c("junk", "language"), sep = ": ") %>%
             dplyr::arrange(language) %>%
             dplyr::select(-junk) %>%
-            dplyr::filter(!language == "Aboriginal languages", !language == "Official languages")
+            dplyr::filter(!language == "Aboriginal languages", !language == "Official languages", !language == "Non-official languages")
     } else {
         language <- cancensus::get_census(dataset = dataset,
                                           regions = region,
@@ -48,7 +48,7 @@ get_language_data <- function(dataset, query_vector, region_level = "C") {
             tidyr::separate(language, into = c("junk", "language"), sep = ": ") %>%
             dplyr::arrange(language) %>%
             dplyr::select(-junk) %>%
-            dplyr::filter(!language == "Aboriginal languages", !language == "Official languages")
+            dplyr::filter(!language == "Aboriginal languages", !language == "Official languages", !language == "Non-official languages")
     }
 
     # language <- cancensus::get_census(dataset = dataset,

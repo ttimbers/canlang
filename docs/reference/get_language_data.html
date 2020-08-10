@@ -117,7 +117,7 @@
     <p>Get census language data at the Canadian level in a tidy format.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>get_language_data</span>(<span class='no'>dataset</span>, <span class='no'>query_vector</span>)</pre>
+    <pre class="usage"><span class='fu'>get_language_data</span>(<span class='no'>dataset</span>, <span class='no'>query_vector</span>, <span class='kw'>region_level</span> <span class='kw'>=</span> <span class='st'>"C"</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -129,6 +129,10 @@
     <tr>
       <th>query_vector</th>
       <td><p>character vector of vector from which to retrieve the data (e.g., "v_CA16_815")</p></td>
+    </tr>
+    <tr>
+      <th>region_level</th>
+      <td><p>character vector of which region to aggregate by. Default is "C" for Canada level.</p></td>
     </tr>
     </table>
 

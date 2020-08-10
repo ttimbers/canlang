@@ -17,6 +17,20 @@ census data set using the
 {[cancensus](https://mountainmath.github.io/cancensus/index.html)} R
 package.
 
+This package contains two data sets:
+
+1.  [`can_lang`](#example-usage-of-can_lang): Contains the counts of the
+    total number of Canadians that report each language as their mother
+    tongue, which language they speak most often at home, which language
+    they use most often at work, and which language they have knowledge
+    for.
+
+2.  [`region_lang`](#example-usage-of-region_lang): For each census
+    division, it contains the counts of how many Canadians report each
+    language as their mother tongue, which language they speak most
+    often at home, which language they use most often at work, and which
+    language they have knowledge for.
+
 ## Installation
 
 You can install the development version from
@@ -27,31 +41,31 @@ You can install the development version from
 devtools::install_github("ttimbers/canlang")
 ```
 
-## Example usage
+## Example usage of `can_lang`
 
-The data set `can_lang` lists the counts of how many Canadians report
-each language as their mother tongue, which language they speak most
-often at home, which language they use most often at work, and which
-language they have knowledge for. This data was recorded in the 2016
-Census:
+The data set `can_lang` contains the counts of the total number of
+Canadians that report each language as their mother tongue, which
+language they speak most often at home, which language they use most
+often at work, and which language they have knowledge for. This data was
+recorded in the 2016 Census:
 
 ``` r
 library(canlang)
 head(can_lang)
-#>                                  category               language mother_tongue
-#> 1 Non-Official & Non-Aboriginal languages              Afrikaans         10260
-#> 2 Non-Official & Non-Aboriginal languages             Akan (Twi)         13460
-#> 3 Non-Official & Non-Aboriginal languages               Albanian         26895
-#> 4                    Aboriginal languages              Algonquin          1260
-#> 5 Non-Official & Non-Aboriginal languages American Sign Language          2685
-#> 6 Non-Official & Non-Aboriginal languages                Amharic         22465
-#>   most_at_home most_at_work lang_known
-#> 1         4785           85      23415
-#> 2         5985           25      22150
-#> 3        13135          345      31930
-#> 4          370           40       2480
-#> 5         3020         1145      21930
-#> 6        12785          200      33670
+#>                                  category                       language
+#> 1                    Aboriginal languages   Aboriginal languages, n.o.s.
+#> 2 Non-Official & Non-Aboriginal languages                      Afrikaans
+#> 3 Non-Official & Non-Aboriginal languages Afro-Asiatic languages, n.i.e.
+#> 4 Non-Official & Non-Aboriginal languages                     Akan (Twi)
+#> 5 Non-Official & Non-Aboriginal languages                       Albanian
+#> 6                    Aboriginal languages   Algonquian languages, n.i.e.
+#>   mother_tongue most_at_home most_at_work lang_known
+#> 1           590          235           30        665
+#> 2         10260         4785           85      23415
+#> 3          1150          445           10       2775
+#> 4         13460         5985           25      22150
+#> 5         26895        13135          345      31930
+#> 6            45           10            0        120
 ```
 
 ``` r
@@ -103,6 +117,31 @@ The
 directory contains the the scripts necessary to create everything in
 this package, including the R data objects and the plain text, excel and
 SQLite database files.
+
+## Example usage of `region_lang`
+
+For each census division, the data set `region_lang` contains the counts
+of how many Canadians report each language as their mother tongue, which
+language they speak most often at home, which language they use most
+often at work, and which language they have knowledge for.
+
+``` r
+library(canlang)
+library(dplyr)
+region_lang %>% 
+    filter(region == "Greater Vancouver (RD)") %>% 
+    arrange(desc(mother_tongue)) %>% 
+    head()
+#> # A tibble: 6 x 7
+#>   region  category   language mother_tongue most_at_home most_at_work lang_known
+#>   <fct>   <chr>      <chr>            <dbl>        <dbl>        <dbl>      <dbl>
+#> 1 Greate… Official … English        1316635      1622735      1330560    2289520
+#> 2 Greate… Non-Offic… Cantone…        184365       132185        22890     223705
+#> 3 Greate… Non-Offic… Mandarin        174920       138680        23190     250175
+#> 4 Greate… Non-Offic… Punjabi…        151205       104855        13130     187530
+#> 5 Greate… Non-Offic… Tagalog…         66830        30700          635      96295
+#> 6 Greate… Non-Offic… Korean           45990        34225         5075      50640
+```
 
 ## References
 
