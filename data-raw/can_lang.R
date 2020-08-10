@@ -6,6 +6,7 @@ library(here)
 library(openxlsx)
 library(readr)
 library(readxl)
+library(RSQLite)
 library(tidyr)
 
 # Mother tongue -----------------------------------------------------------
@@ -96,4 +97,6 @@ readr::write_delim(can_lang, here::here("inst", "extdata", "can_lang.tsv"),
 write.xlsx(can_lang, here::here("inst", "extdata", "can_lang.xlsx"))
 
 # SQLite file
-#TBD
+con <- RSQLite::dbConnect(RSQLite::SQLite(), here::here("inst", "extdata", "can_lang.db"))
+RSQLite::dbWriteTable(con, "can_lang", can_lang, overwrite = TRUE)
+RSQLite::dbDisconnect(con)

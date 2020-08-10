@@ -114,6 +114,28 @@
     <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span>()</pre></div>
 <p><img src="reference/figures/README-example-plot-from-data-1.png" width="100%"></p>
 </div>
+<div id="plain-text-excel-and-sqlite-database-files" class="section level2">
+<h2 class="hasAnchor">
+<a href="#plain-text-excel-and-sqlite-database-files" class="anchor"></a>Plain text, excel and SQLite database files</h2>
+<p>We have included several different plain text files, an excel files and a SQLite database file in this repo to be used for practice importing from these filetypes. Specifically, they are:</p>
+<ul>
+<li>
+<a href="https://github.com/ttimbers/canlang/blob/master/inst/extdata/can_lang.csv"><code>can_lang.csv</code></a>: the same dataset available via <code><a href="reference/can_lang.html">canlang::can_lang</a></code> stored as a vanilla <code>.csv</code> file.</li>
+<li>
+<a href="https://github.com/ttimbers/canlang/blob/master/inst/extdata/can_lang-meta-data.csv"><code>can_lang-meta-data.csv</code></a>: the same dataset available via <code><a href="reference/can_lang.html">canlang::can_lang</a></code> stored as a vanilla <code>.csv</code> file with two rows of metadata that should be skipped.</li>
+<li>
+<a href="https://github.com/ttimbers/canlang/blob/master/inst/extdata/can_lang.tsv"><code>can_lang.tsv</code></a>: the same dataset available via <code><a href="reference/can_lang.html">canlang::can_lang</a></code> stored as a <code>.tsv</code> (tab separated) file and has no column names.</li>
+<li>
+<a href="https://github.com/ttimbers/canlang/blob/master/inst/extdata/can_lang.xlsx"><code>can_lang.xlsx</code></a>: the same dataset available via <code><a href="reference/can_lang.html">canlang::can_lang</a></code> stored as a <code>.xlsx</code> file. Can be read in using the {<a href="https://readxl.tidyverse.org/">readxl</a>} package.</li>
+<li>
+<a href="https://github.com/ttimbers/canlang/blob/master/inst/extdata/can_lang.db"><code>can_lang.db</code></a>: the same dataset available via <code><a href="reference/can_lang.html">canlang::can_lang</a></code> stored as a SQLite database (<code>.db</code>) file. Can be read in using the {<a href="https://rsqlite.r-dbi.org/">RSQLite</a>} package.</li>
+</ul>
+</div>
+<div id="how-this-was-made" class="section level2">
+<h2 class="hasAnchor">
+<a href="#how-this-was-made" class="anchor"></a>How this was made</h2>
+<p>The <a href="https://github.com/ttimbers/canlang/tree/master/data-raw"><code>data-raw</code></a> directory contains the the scripts necessary to create everything in this package, including the R data objects and the plain text, excel and SQLite database files.</p>
+</div>
 <div id="references" class="section level2">
 <h2 class="hasAnchor">
 <a href="#references" class="anchor"></a>References</h2>

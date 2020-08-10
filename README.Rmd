@@ -53,7 +53,19 @@ ggplot2::ggplot(data = can_lang,
     theme_bw()
 ```
 
+## Plain text, excel and SQLite database files
 
+We have included several different plain text files, an excel files and a SQLite database file in this repo to be used for practice importing from these filetypes. Specifically, they are:
+
++ [`can_lang.csv`](https://github.com/ttimbers/canlang/blob/master/inst/extdata/can_lang.csv): the same dataset available via `canlang::can_lang` stored as a vanilla `.csv` file.
++ [`can_lang-meta-data.csv`](https://github.com/ttimbers/canlang/blob/master/inst/extdata/can_lang-meta-data.csv): the same dataset available via `canlang::can_lang` stored as a vanilla `.csv` file with two rows of metadata that should be skipped.
++ [`can_lang.tsv`](https://github.com/ttimbers/canlang/blob/master/inst/extdata/can_lang.tsv): the same dataset available via `canlang::can_lang` stored as a `.tsv` (tab separated) file and has no column names.
++ [`can_lang.xlsx`](https://github.com/ttimbers/canlang/blob/master/inst/extdata/can_lang.xlsx): the same dataset available via `canlang::can_lang` stored as a `.xlsx` file. Can be read in using the {[readxl](https://readxl.tidyverse.org/)} package.
++ [`can_lang.db`](https://github.com/ttimbers/canlang/blob/master/inst/extdata/can_lang.db): the same dataset available via `canlang::can_lang` stored as a SQLite database (`.db`) file. Can be read in using the {[RSQLite](https://rsqlite.r-dbi.org/)} package.
+
+## How this was made
+
+The [`data-raw`](https://github.com/ttimbers/canlang/tree/master/data-raw) directory contains the the scripts necessary to create everything in this package, including the R data objects and the plain text, excel and SQLite database files.
 
 ## References
 
