@@ -5,6 +5,8 @@
 
 <!-- badges: start -->
 
+[![R build
+status](https://github.com/ttimbers/canlang/workflows/R-CMD-check/badge.svg)](https://github.com/ttimbers/canlang/actions)
 <!-- badges: end -->
 
 The goal of {canlang} is to easily share language data collected in the
@@ -65,7 +67,7 @@ ggplot2::ggplot(data = can_lang,
     theme_bw()
 ```
 
-<img src="man/figures/README-example plot from data-1.png" width="100%" />
+<img src="man/figures/README-example-plot-from-data-1.png" width="100%" />
 
 ## References
 
