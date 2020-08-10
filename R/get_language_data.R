@@ -2,6 +2,7 @@
 #'
 #' @param dataset character vector of the data set name (e.g., "CA16")
 #' @param query_vector character vector of vector from which to retrieve the data (e.g., "v_CA16_815")
+#' @param region_level character vector of which region to aggregate by. Default is "C" for Canada level.
 #'
 #' @return a tidy data frame of language data at the Canadian level
 #' @export
@@ -26,14 +27,38 @@ get_language_data <- function(dataset, query_vector, region_level = "C") {
         dplyr::filter(level == region_level) %>%
         cancensus::as_census_region_list()
 
-    language <- cancensus::get_census(dataset = dataset,
-                                regions = region,
-                                vectors = langs_vectors,
-                                level = region_level) %>%
-        dplyr::select(-GeoUID, -`Region Name`, -Households, -Type, -`Area (sq km)`, -Population, -Dwellings) %>%
-        tidyr::pivot_longer(everything(), names_to = "language", values_to = "count") %>%
-        tidyr::separate(language, into = c("junk", "language"), sep = ": ") %>%
-        dplyr::arrange(language) %>%
-        dplyr::select(-junk) %>%
-        dplyr::filter(!language == "Aboriginal languages", !language == "Official languages")
+    if (region_level == "C") {
+        language <- cancensus::get_census(dataset = dataset,
+                                          regions = region,
+                                          vectors = langs_vectors,
+                                          level = region_level) %>%
+            dplyr::select(-GeoUID, -`Region Name`, -Households, -Type, -`Area (sq km)`, -Population, -Dwellings) %>%
+            tidyr::pivot_longer(everything(), names_to = "language", values_to = "count") %>%
+            tidyr::separate(language, into = c("junk", "language"), sep = ": ") %>%
+            dplyr::arrange(language) %>%
+            dplyr::select(-junk) %>%
+            dplyr::filter(!language == "Aboriginal languages", !language == "Official languages")
+    } else {
+        language <- cancensus::get_census(dataset = dataset,
+                                          regions = region,
+                                          vectors = langs_vectors,
+                                          level = region_level) %>%
+            dplyr::select(-GeoUID, -Households, -Type, -`Area (sq km)`, -Population, -Dwellings, -PR_UID, -C_UID) %>%
+            tidyr::pivot_longer(-`Region Name`, names_to = "language", values_to = "count") %>%
+            tidyr::separate(language, into = c("junk", "language"), sep = ": ") %>%
+            dplyr::arrange(language) %>%
+            dplyr::select(-junk) %>%
+            dplyr::filter(!language == "Aboriginal languages", !language == "Official languages")
+    }
+
+    # language <- cancensus::get_census(dataset = dataset,
+    #                             regions = region,
+    #                             vectors = langs_vectors,
+    #                             level = region_level) %>%
+    #     dplyr::select(-GeoUID, -Households, -Type, -`Area (sq km)`, -Population, -Dwellings) %>%
+    #     tidyr::pivot_longer(everything(), names_to = "language", values_to = "count") %>%
+    #     tidyr::separate(language, into = c("junk", "language"), sep = ": ") %>%
+    #     dplyr::arrange(language) %>%
+    #     dplyr::select(-junk) %>%
+    #     dplyr::filter(!language == "Aboriginal languages", !language == "Official languages")
 }
