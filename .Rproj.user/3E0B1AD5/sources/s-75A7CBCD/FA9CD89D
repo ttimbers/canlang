@@ -3,22 +3,22 @@
     "path": "~/Documents/canlang/README.Rmd",
     "project_path": "README.Rmd",
     "type": "r_markdown",
-    "hash": "0",
+    "hash": "603698910",
     "contents": "",
-    "dirty": false,
+    "dirty": true,
     "created": 1596914273872.0,
     "source_on_save": false,
     "relative_order": 5,
     "properties": {
-        "cursorPosition": "45,1",
-        "scrollLine": "36"
+        "cursorPosition": "56,0",
+        "scrollLine": "43"
     },
     "folds": "",
     "lastKnownWriteTime": 1597018371,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1597018371,
+    "last_content_update": 1597020482052,
     "read_only": false,
     "read_only_alternatives": []
 }

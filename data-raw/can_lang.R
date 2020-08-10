@@ -2,6 +2,9 @@
 library(cancensus)
 library(canlang)
 library(dplyr)
+library(here)
+library(readr)
+library(readxl)
 library(tidyr)
 
 # Mother tongue -----------------------------------------------------------
@@ -69,4 +72,26 @@ can_lang <- left_join(can_lang, lang_cat) %>%
 
 # Write data --------------------------------------------------------------
 
+# R package data object
 usethis::use_data(can_lang, overwrite = TRUE)
+
+# plain vanilla csv file
+readr::write_csv(can_lang, here::here("inst", "extdata", "can_lang.csv"))
+
+# csv file with meta data in header
+fileConn<-file(here::here("inst", "extdata", "can_lang-meta-data.csv"))
+writeLines(c('Source: Statistics Canada, Census of Population, 2016. Reproduced and distributed on an "as is" basis with the permission of Statistics Canada.',
+             'Date collected: 2020/07/09'), fileConn)
+close(fileConn)
+readr::write_csv(can_lang, here::here("inst", "extdata", "can_lang-meta-data.csv"),
+                 append = TRUE)
+
+# No col names and tab delimited
+readr::write_delim(can_lang, here::here("inst", "extdata", "can_lang.tsv"),
+                 delim = "\t",
+                 col_names = FALSE)
+
+# Excel file
+# TBD
+
+# SQLite file
