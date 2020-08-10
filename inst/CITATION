@@ -1,0 +1,13 @@
+citHeader("To cite canlang in publications use:")
+
+citEntry(
+  entry    = "Manual",
+  title    = "canlang: Canadian Census language data",
+  author   = "Tiffany Timbers",
+  year     = "2020",
+  note   = "R package version 0.0.9",
+  url      = "https://ttimbers.github.io/canlang/",
+  textVersion = paste(
+
+  )
+)
