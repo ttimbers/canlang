@@ -120,10 +120,34 @@
     <span class="fu">theme_bw</span>()</pre></div>
 <p><img src="reference/figures/README-example-plot-from-data-1.png" width="100%"></p>
 </div>
+<div id="example-usage-of-region_lang" class="section level2">
+<h2 class="hasAnchor">
+<a href="#example-usage-of-region_lang" class="anchor"></a>Example usage of <code>region_lang</code>
+</h2>
+<p>For each census metropolitan area (CMA), the data set <code>region_lang</code> contains the counts of how many Canadians report each language as their mother tongue, which language they speak most often at home, which language they use most often at work, and which language they have knowledge for.</p>
+<div class="sourceCode" id="cb4"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">canlang</span>)
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">dplyr</span>)
+<span class="no">region_lang</span> <span class="kw">%&gt;%</span>
+    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(<span class="no">region</span> <span class="kw">==</span> <span class="st">"Vancouver"</span>) <span class="kw">%&gt;%</span>
+    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span>(<span class="fu"><a href="https://dplyr.tidyverse.org/reference/desc.html">desc</a></span>(<span class="no">mother_tongue</span>)) <span class="kw">%&gt;%</span>
+    <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>()
+<span class="co">#&gt; # A tibble: 6 x 7</span>
+<span class="co">#&gt;   region  category  language  mother_tongue most_at_home most_at_work lang_known</span>
+<span class="co">#&gt;   &lt;chr&gt;   &lt;chr&gt;     &lt;chr&gt;             &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;      &lt;dbl&gt;</span>
+<span class="co">#&gt; 1 Vancou… Official… English         1316635      1622735      1330555    2289515</span>
+<span class="co">#&gt; 2 Vancou… Non-Offi… Cantonese        184365       132185        22890     223700</span>
+<span class="co">#&gt; 3 Vancou… Non-Offi… Mandarin         174920       138680        23195     250175</span>
+<span class="co">#&gt; 4 Vancou… Non-Offi… Punjabi …        151205       104855        13125     187530</span>
+<span class="co">#&gt; 5 Vancou… Non-Offi… Tagalog …         66825        30695          635      96290</span>
+<span class="co">#&gt; 6 Vancou… Non-Offi… Korean            45990        34225         5075      50640</span></pre></div>
+</div>
 <div id="plain-text-excel-and-sqlite-database-files" class="section level2">
 <h2 class="hasAnchor">
 <a href="#plain-text-excel-and-sqlite-database-files" class="anchor"></a>Plain text, excel and SQLite database files</h2>
 <p>We have included several different plain text files, an excel files and a SQLite database file in this repo to be used for practice importing from these filetypes. Specifically, they are:</p>
+<div id="canada-level" class="section level3">
+<h3 class="hasAnchor">
+<a href="#canada-level" class="anchor"></a>Canada-level</h3>
 <ul>
 <li>
 <a href="https://github.com/ttimbers/canlang/blob/master/inst/extdata/can_lang.csv"><code>can_lang.csv</code></a>: the same dataset available via <code><a href="reference/can_lang.html">canlang::can_lang</a></code> stored as a vanilla <code>.csv</code> file.</li>
@@ -137,31 +161,27 @@
 <a href="https://github.com/ttimbers/canlang/blob/master/inst/extdata/can_lang.db"><code>can_lang.db</code></a>: the same dataset available via <code><a href="reference/can_lang.html">canlang::can_lang</a></code> stored as a SQLite database (<code>.db</code>) file. Can be read in using the {<a href="https://rsqlite.r-dbi.org/">RSQLite</a>} package.</li>
 </ul>
 </div>
+<div id="census-metroolitan-area-cma-level" class="section level3">
+<h3 class="hasAnchor">
+<a href="#census-metroolitan-area-cma-level" class="anchor"></a>Census metroolitan area (CMA)-level</h3>
+<ul>
+<li>
+<a href="https://github.com/ttimbers/canlang/blob/master/inst/extdata/vancouver_lang.csv"><code>vancouver_lang.csv</code></a> &amp; <a href="https://github.com/ttimbers/canlang/blob/master/inst/extdata/calgary_lang.csv"><code>calgary_lang.csv</code></a>: data for Vancouver, BC and Calgary, AB, respectively, stored as a vanilla <code>.csv</code> file.</li>
+<li>
+<a href="https://github.com/ttimbers/canlang/blob/master/inst/extdata/victoria_lang.csv"><code>victoria_lang.csv</code></a>: data for Victoria, BC stored as a vanilla <code>.tsv</code> file.</li>
+<li>
+<a href="https://github.com/ttimbers/canlang/blob/master/inst/extdata/kelowna_lang.csv"><code>kelowna_lang.csv</code></a>: data for Kelowna, BC stored as a <code>.csv</code> file (csv2 flavour) with metadata in the header and footer that should be skipped.</li>
+<li>
+<a href="https://github.com/ttimbers/canlang/blob/master/inst/extdata/abbotsford_lang.xlsx"><code>abbotsford_lang.xlsx</code></a>: data for Abbotsford, BC stored as a <code>.xlsx</code> file where sheet 1 is the column names, and sheet 2 is the data with no column names. Can be read in using the {<a href="https://readxl.tidyverse.org/">readxl</a>} package.</li>
+<li>
+<a href="https://github.com/ttimbers/canlang/blob/master/inst/extdata/edmonton_lang.xlsx"><code>edmonton_lang.xlsx</code></a>: data for Edmonton, AB stored as a <code>.xlsx</code> file where all the data is in sheet 1.</li>
+</ul>
+</div>
+</div>
 <div id="how-this-was-made" class="section level2">
 <h2 class="hasAnchor">
 <a href="#how-this-was-made" class="anchor"></a>How this was made</h2>
 <p>The <a href="https://github.com/ttimbers/canlang/tree/master/data-raw"><code>data-raw</code></a> directory contains the the scripts necessary to create everything in this package, including the R data objects and the plain text, excel and SQLite database files.</p>
-</div>
-<div id="example-usage-of-region_lang" class="section level2">
-<h2 class="hasAnchor">
-<a href="#example-usage-of-region_lang" class="anchor"></a>Example usage of <code>region_lang</code>
-</h2>
-<p>For each census division, the data set <code>region_lang</code> contains the counts of how many Canadians report each language as their mother tongue, which language they speak most often at home, which language they use most often at work, and which language they have knowledge for.</p>
-<div class="sourceCode" id="cb4"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">canlang</span>)
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">dplyr</span>)
-<span class="no">region_lang</span> <span class="kw">%&gt;%</span>
-    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span>(<span class="no">region</span> <span class="kw">==</span> <span class="st">"Greater Vancouver (RD)"</span>) <span class="kw">%&gt;%</span>
-    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span>(<span class="fu"><a href="https://dplyr.tidyverse.org/reference/desc.html">desc</a></span>(<span class="no">mother_tongue</span>)) <span class="kw">%&gt;%</span>
-    <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>()
-<span class="co">#&gt; # A tibble: 6 x 7</span>
-<span class="co">#&gt;   region  category   language mother_tongue most_at_home most_at_work lang_known</span>
-<span class="co">#&gt;   &lt;fct&gt;   &lt;chr&gt;      &lt;chr&gt;            &lt;dbl&gt;        &lt;dbl&gt;        &lt;dbl&gt;      &lt;dbl&gt;</span>
-<span class="co">#&gt; 1 Greate… Official … English        1316635      1622735      1330560    2289520</span>
-<span class="co">#&gt; 2 Greate… Non-Offic… Cantone…        184365       132185        22890     223705</span>
-<span class="co">#&gt; 3 Greate… Non-Offic… Mandarin        174920       138680        23190     250175</span>
-<span class="co">#&gt; 4 Greate… Non-Offic… Punjabi…        151205       104855        13130     187530</span>
-<span class="co">#&gt; 5 Greate… Non-Offic… Tagalog…         66830        30700          635      96295</span>
-<span class="co">#&gt; 6 Greate… Non-Offic… Korean           45990        34225         5075      50640</span></pre></div>
 </div>
 <div id="references" class="section level2">
 <h2 class="hasAnchor">
