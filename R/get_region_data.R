@@ -33,7 +33,7 @@ get_region_data <- function(dataset, query_vector, region_level = "CMA") {
                                           level = region_level) %>%
         dplyr::select(`Region Name`, Households,`Area (sq km)`, Population, Dwellings) %>%
         dplyr::arrange(Population) %>%
-        rename(households = Households,
+        dplyr::rename(households = Households,
                area = `Area (sq km)`,
                population = Population,
                dwellings = Dwellings)

@@ -14,13 +14,13 @@
 #' }
 get_child_langs <- function(dataset, query_vector) {
     lang_cat <- get_language_data(dataset, query_vector) %>%
-        select(language)
+        dplyr::select(language)
 
     category <- cancensus::list_census_vectors(dataset) %>%
         dplyr::filter(vector == query_vector) %>%
-        select(label) %>%
-        pull()
+        dplyr::select(label) %>%
+        dplyr::pull()
 
     lang_cat <- lang_cat %>%
-        mutate(category = category)
+        dplyr::mutate(category = category)
 }
