@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Canadian-level language data collected from the 2016 Canadian Census. — can_lang • canlang</title>
+<title>Get census region data at the Canadian level in a tidy format. — get_region_data • canlang</title>
 
 
 <!-- jquery -->
@@ -39,10 +39,8 @@
 
 
 
-<meta property="og:title" content="Canadian-level language data collected from the 2016 Canadian Census. — can_lang" />
-<meta property="og:description" content="can_lang lists the counts of how many Canadians report each language as their mother tongue,
-which language they speak most often at home, which language they use most often at work, and
-which language they have knowledge for. This data was recorded in the 2016 Canadian Census." />
+<meta property="og:title" content="Get census region data at the Canadian level in a tidy format. — get_region_data" />
+<meta property="og:description" content="Get census region data at the Canadian level in a tidy format." />
 
 
 
@@ -110,36 +108,44 @@ which language they have knowledge for. This data was recorded in the 2016 Canad
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Canadian-level language data collected from the 2016 Canadian Census.</h1>
-    <small class="dont-index">Source: <a href='https://github.com/ttimbers/canlang/blob/master/R/can_lang.R'><code>R/can_lang.R</code></a></small>
-    <div class="hidden name"><code>can_lang.Rd</code></div>
+    <h1>Get census region data at the Canadian level in a tidy format.</h1>
+    <small class="dont-index">Source: <a href='https://github.com/ttimbers/canlang/blob/master/R/get_region_data.R'><code>R/get_region_data.R</code></a></small>
+    <div class="hidden name"><code>get_region_data.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p><code>can_lang</code> lists the counts of how many Canadians report each language as their mother tongue,
-which language they speak most often at home, which language they use most often at work, and
-which language they have knowledge for. This data was recorded in the 2016 Canadian Census.</p>
+    <p>Get census region data at the Canadian level in a tidy format.</p>
     </div>
 
-    <pre class="usage"><span class='no'>can_lang</span></pre>
+    <pre class="usage"><span class='fu'>get_region_data</span>(<span class='no'>dataset</span>, <span class='no'>query_vector</span>, <span class='kw'>region_level</span> <span class='kw'>=</span> <span class='st'>"CMA"</span>)</pre>
 
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>dataset</th>
+      <td><p>character vector of the data set name (e.g., "CA16")</p></td>
+    </tr>
+    <tr>
+      <th>query_vector</th>
+      <td><p>character vector of vector from which to retrieve the data (e.g., "v_CA16_815")</p></td>
+    </tr>
+    <tr>
+      <th>region_level</th>
+      <td><p>character vector of which region to aggregate by. Default is "CMA" for Census Metropolitan Area.</p></td>
+    </tr>
+    </table>
 
-    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A tibble with 178 rows and 6 variables:</p><dl'>
-<dt>category</dt><dd><p>Higher level language category, describing whether the language is an Official Canadian language (e.g., English or French), an Aboriginal language, or a Non-Official and Non-Aboriginal language.</p></dd>
-<dt>language</dt><dd><p>Language queried about on the Canadian Census. Note: n.i.e. means Not included elsewhere, and n.o.s. means Not otherwise specified</p></dd>
-<dt>mother_tongue</dt><dd><p>Total Count of Canadians from the Census who reported the language as their mother tongue (excluding institutional residents - 100% data). Mother tongue is generally defined as the language someone was exposed to since birth.</p></dd>
-<dt>most_at_home</dt><dd><p>Total Count of Canadians from the Census who reported the language as spoken most often at home (excluding institutional residents - 100% data).</p></dd>
-<dt>most_at_work</dt><dd><p>Total Count of Canadians from the Census who reported the language as used most often at work for the population in private households aged 15 years and over who worked since January 1, 2015 (25% sample data).</p></dd>
-<dt>lang_known</dt><dd><p>Total Count of Canadians from the Census who reported knowledge of language for the population in private households (25% sample data).</p></dd>
+    <p>a tidy data frame of region data at the Canadian level</p>
 
-</dl>
-
-    <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
-
-    <p>Source: Statistics Canada, Census of Population, 2016. Reproduced and distributed on an "as is" basis with the permission of Statistics Canada.</p>
-
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
+<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>canlang</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/options.html'>options</a></span>(<span class='kw'>cancensus.api_key</span> <span class='kw'>=</span> <span class='st'>"your_api_key"</span>)
+<span class='fu'>get_region_data</span>(<span class='st'>"CA16"</span>, <span class='st'>"v_CA16_563"</span>)
+}</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
