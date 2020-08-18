@@ -22,10 +22,7 @@ Imports:
     dplyr,
     tidyr,
     stringr,
-    cancensus,
-    here,
-    readr,
-    RSQLite
+    cancensus
 Remotes:  
     r-lib/here,
     tidyverse/readr,
