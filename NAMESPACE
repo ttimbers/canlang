@@ -3,4 +3,5 @@
 export("%>%")
 export(get_child_langs)
 export(get_language_data)
+export(get_region_data)
 importFrom(magrittr,"%>%")

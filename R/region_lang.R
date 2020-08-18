@@ -4,7 +4,7 @@
 #' which language they speak most often at home, which language they use most often at work, and
 #' which language they have knowledge for. This data was recorded in the 2016 Canadian Census.
 #'
-#' @format A tibble with 785395 rows and 7 variables:
+#' @format A tibble with 7490 rows and 7 variables:
 #' \describe{
 #'   \item{region}{Canadian census metropolitan area (CMA)}
 #'   \item{category}{Higher level language category, describing whether the language is an Official Canadian language (e.g., English or French), an Aboriginal language, or a Non-Official and Non-Aboriginal language.}

@@ -5,7 +5,7 @@
 \alias{region_lang}
 \title{Region-level language data collected from the 2016 Canadian Census.}
 \format{
-A tibble with 785395 rows and 7 variables:
+A tibble with 7490 rows and 7 variables:
 \describe{
 \item{region}{Canadian census metropolitan area (CMA)}
 \item{category}{Higher level language category, describing whether the language is an Official Canadian language (e.g., English or French), an Aboriginal language, or a Non-Official and Non-Aboriginal language.}

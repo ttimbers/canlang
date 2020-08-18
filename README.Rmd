@@ -73,6 +73,18 @@ region_lang %>%
     head()
 ```
 
+## Example usage of `region_data`
+
+For each census metropolitan area (CMA), the data set `region_data` contains the statistics for number of households, land area, population and number of dwellings.
+
+```{r example-region_data, warning = FALSE, message = FALSE}
+library(canlang)
+library(dplyr)
+region_data %>% 
+    arrange(desc(population)) %>% 
+    head()
+```
+
 ## Plain text, excel and SQLite database files
 
 We have included several different plain text files, an excel files and a SQLite database file in this repo to be used for practice importing from these filetypes. Specifically, they are:

@@ -111,6 +111,29 @@ region_lang %>%
 #> 6 Vancou… Non-Offi… Korean            45990        34225         5075      50640
 ```
 
+## Example usage of `region_data`
+
+For each census metropolitan area (CMA), the data set `region_data`
+contains the statistics for number of households, land area, population
+and number of dwellings.
+
+``` r
+library(canlang)
+library(dplyr)
+region_data %>% 
+    arrange(desc(population)) %>% 
+    head()
+#> # A tibble: 6 x 5
+#>   region            households  area population dwellings
+#>   <chr>                  <dbl> <dbl>      <dbl>     <dbl>
+#> 1 Toronto              2135909 6270.    5928040   2235145
+#> 2 Montréal             1727310 4638.    4098927   1823281
+#> 3 Vancouver             960894 3040.    2463431   1027613
+#> 4 Calgary               519693 5242.    1392609    544870
+#> 5 Ottawa - Gatineau     535499 7169.    1323783    571146
+#> 6 Edmonton              502143 9858.    1321426    537634
+```
+
 ## Plain text, excel and SQLite database files
 
 We have included several different plain text files, an excel files and
