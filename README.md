@@ -17,7 +17,7 @@ census data set using the
 {[cancensus](https://mountainmath.github.io/cancensus/index.html)} R
 package.
 
-This package contains two data sets:
+This package contains three data sets:
 
 1.  [`can_lang`](#example-usage-of-can_lang): Contains the counts of the
     total number of Canadians that report each language as their mother
@@ -30,6 +30,10 @@ This package contains two data sets:
     language as their mother tongue, which language they speak most
     often at home, which language they use most often at work, and which
     language they have knowledge for.
+
+3.  [`region_data`](#example-usage-of-region_data): For each census
+    division, it contains the statistics for number of households, land
+    area, population and number of dwellings.
 
 ## Installation
 
