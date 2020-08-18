@@ -23,7 +23,3 @@ Imports:
     tidyr,
     stringr,
     cancensus
-Remotes:  
-    r-lib/here,
-    tidyverse/readr,
-    r-dbi/RSQLite
