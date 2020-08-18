@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Get census language data from the Canadian level in a tidy format. — get_language_data • canlang</title>
+<title>Get census region data at the Canadian level in a tidy format. — get_region_data • canlang</title>
 
 
 <!-- jquery -->
@@ -39,8 +39,8 @@
 
 
 
-<meta property="og:title" content="Get census language data from the Canadian level in a tidy format. — get_language_data" />
-<meta property="og:description" content="Get census language data from the Canadian level in a tidy format." />
+<meta property="og:title" content="Get census region data at the Canadian level in a tidy format. — get_region_data" />
+<meta property="og:description" content="Get census region data at the Canadian level in a tidy format." />
 
 
 
@@ -108,16 +108,16 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Get census language data from the Canadian level in a tidy format.</h1>
-    <small class="dont-index">Source: <a href='https://github.com/ttimbers/canlang/blob/master/R/get_language_data.R'><code>R/get_language_data.R</code></a></small>
-    <div class="hidden name"><code>get_language_data.Rd</code></div>
+    <h1>Get census region data at the Canadian level in a tidy format.</h1>
+    <small class="dont-index">Source: <a href='https://github.com/ttimbers/canlang/blob/master/R/get_region_data.R'><code>R/get_region_data.R</code></a></small>
+    <div class="hidden name"><code>get_region_data.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Get census language data from the Canadian level in a tidy format.</p>
+    <p>Get census region data at the Canadian level in a tidy format.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>get_language_data</span>(<span class='no'>dataset</span>, <span class='no'>query_vector</span>, <span class='kw'>region_level</span> <span class='kw'>=</span> <span class='st'>"C"</span>)</pre>
+    <pre class="usage"><span class='fu'>get_region_data</span>(<span class='no'>dataset</span>, <span class='no'>query_vector</span>, <span class='kw'>region_level</span> <span class='kw'>=</span> <span class='st'>"CMA"</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -132,19 +132,19 @@
     </tr>
     <tr>
       <th>region_level</th>
-      <td><p>character vector of which region to aggregate by. Default is "C" for Canada level.</p></td>
+      <td><p>character vector of which region to aggregate by. Default is "CMA" for Census Metropolitan Area.</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>a tidy data frame of language data at the Canadian level</p>
+    <p>a tidy data frame of region data at the Canadian level</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
 <span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>canlang</span>)
 <span class='fu'><a href='https://rdrr.io/r/base/options.html'>options</a></span>(<span class='kw'>cancensus.api_key</span> <span class='kw'>=</span> <span class='st'>"your_api_key"</span>)
-<span class='fu'>get_language_data</span>(<span class='st'>"CA16"</span>, <span class='st'>"v_CA16_815"</span>)
+<span class='fu'>get_region_data</span>(<span class='st'>"CA16"</span>, <span class='st'>"v_CA16_563"</span>)
 }</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

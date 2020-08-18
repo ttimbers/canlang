@@ -141,6 +141,26 @@
 <span class="co">#&gt; 5 Vancou… Non-Offi… Tagalog …         66825        30695          635      96290</span>
 <span class="co">#&gt; 6 Vancou… Non-Offi… Korean            45990        34225         5075      50640</span></pre></div>
 </div>
+<div id="example-usage-of-region_data" class="section level2">
+<h2 class="hasAnchor">
+<a href="#example-usage-of-region_data" class="anchor"></a>Example usage of <code>region_data</code>
+</h2>
+<p>For each census metropolitan area (CMA), the data set <code>region_data</code> contains the statistics for number of households, land area, population and number of dwellings.</p>
+<div class="sourceCode" id="cb5"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">canlang</span>)
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">dplyr</span>)
+<span class="no">region_data</span> <span class="kw">%&gt;%</span>
+    <span class="fu"><a href="https://dplyr.tidyverse.org/reference/arrange.html">arrange</a></span>(<span class="fu"><a href="https://dplyr.tidyverse.org/reference/desc.html">desc</a></span>(<span class="no">population</span>)) <span class="kw">%&gt;%</span>
+    <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>()
+<span class="co">#&gt; # A tibble: 6 x 5</span>
+<span class="co">#&gt;   region            households  area population dwellings</span>
+<span class="co">#&gt;   &lt;chr&gt;                  &lt;dbl&gt; &lt;dbl&gt;      &lt;dbl&gt;     &lt;dbl&gt;</span>
+<span class="co">#&gt; 1 Toronto              2135909 6270.    5928040   2235145</span>
+<span class="co">#&gt; 2 Montréal             1727310 4638.    4098927   1823281</span>
+<span class="co">#&gt; 3 Vancouver             960894 3040.    2463431   1027613</span>
+<span class="co">#&gt; 4 Calgary               519693 5242.    1392609    544870</span>
+<span class="co">#&gt; 5 Ottawa - Gatineau     535499 7169.    1323783    571146</span>
+<span class="co">#&gt; 6 Edmonton              502143 9858.    1321426    537634</span></pre></div>
+</div>
 <div id="plain-text-excel-and-sqlite-database-files" class="section level2">
 <h2 class="hasAnchor">
 <a href="#plain-text-excel-and-sqlite-database-files" class="anchor"></a>Plain text, excel and SQLite database files</h2>
