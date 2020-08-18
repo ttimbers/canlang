@@ -7,7 +7,7 @@
 \format{
 A tibble with 785395 rows and 7 variables:
 \describe{
-\item{region}{Canadian census region}
+\item{region}{Canadian census metropolitan area (CMA)}
 \item{category}{Higher level language category, describing whether the language is an Official Canadian language (e.g., English or French), an Aboriginal language, or a Non-Official and Non-Aboriginal language.}
 \item{language}{Language queried about on the Canadian Census. Note: n.i.e. means Not included elsewhere, and n.o.s. means Not otherwise specified}
 \item{mother_tongue}{Total Count of Canadians from the Census who reported the language as their mother tongue (excluding institutional residents - 100\% data). Mother tongue is generally defined as the language someone was exposed to since birth.}

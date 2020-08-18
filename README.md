@@ -85,11 +85,39 @@ ggplot2::ggplot(data = can_lang,
 
 <img src="man/figures/README-example-plot-from-data-1.png" width="100%" />
 
+## Example usage of `region_lang`
+
+For each census metropolitan area (CMA), the data set `region_lang`
+contains the counts of how many Canadians report each language as their
+mother tongue, which language they speak most often at home, which
+language they use most often at work, and which language they have
+knowledge for.
+
+``` r
+library(canlang)
+library(dplyr)
+region_lang %>% 
+    filter(region == "Vancouver") %>% 
+    arrange(desc(mother_tongue)) %>% 
+    head()
+#> # A tibble: 6 x 7
+#>   region  category  language  mother_tongue most_at_home most_at_work lang_known
+#>   <chr>   <chr>     <chr>             <dbl>        <dbl>        <dbl>      <dbl>
+#> 1 Vancou… Official… English         1316635      1622735      1330555    2289515
+#> 2 Vancou… Non-Offi… Cantonese        184365       132185        22890     223700
+#> 3 Vancou… Non-Offi… Mandarin         174920       138680        23195     250175
+#> 4 Vancou… Non-Offi… Punjabi …        151205       104855        13125     187530
+#> 5 Vancou… Non-Offi… Tagalog …         66825        30695          635      96290
+#> 6 Vancou… Non-Offi… Korean            45990        34225         5075      50640
+```
+
 ## Plain text, excel and SQLite database files
 
 We have included several different plain text files, an excel files and
 a SQLite database file in this repo to be used for practice importing
 from these filetypes. Specifically, they are:
+
+### Canada-level
 
   - [`can_lang.csv`](https://github.com/ttimbers/canlang/blob/master/inst/extdata/can_lang.csv):
     the same dataset available via `canlang::can_lang` stored as a
@@ -110,6 +138,27 @@ from these filetypes. Specifically, they are:
     SQLite database (`.db`) file. Can be read in using the
     {[RSQLite](https://rsqlite.r-dbi.org/)} package.
 
+### Census metroolitan area (CMA)-level
+
+  - [`vancouver_lang.csv`](https://github.com/ttimbers/canlang/blob/master/inst/extdata/vancouver_lang.csv)
+    &
+    [`calgary_lang.csv`](https://github.com/ttimbers/canlang/blob/master/inst/extdata/calgary_lang.csv):
+    data for Vancouver, BC and Calgary, AB, respectively, stored as a
+    vanilla `.csv` file.
+  - [`victoria_lang.csv`](https://github.com/ttimbers/canlang/blob/master/inst/extdata/victoria_lang.csv):
+    data for Victoria, BC stored as a vanilla `.tsv` file.
+  - [`kelowna_lang.csv`](https://github.com/ttimbers/canlang/blob/master/inst/extdata/kelowna_lang.csv):
+    data for Kelowna, BC stored as a `.csv` file (csv2 flavour) with
+    metadata in the header and footer that should be skipped.
+  - [`abbotsford_lang.xlsx`](https://github.com/ttimbers/canlang/blob/master/inst/extdata/abbotsford_lang.xlsx):
+    data for Abbotsford, BC stored as a `.xlsx` file where sheet 1 is
+    the column names, and sheet 2 is the data with no column names. Can
+    be read in using the {[readxl](https://readxl.tidyverse.org/)}
+    package.
+  - [`edmonton_lang.xlsx`](https://github.com/ttimbers/canlang/blob/master/inst/extdata/edmonton_lang.xlsx):
+    data for Edmonton, AB stored as a `.xlsx` file where all the data is
+    in sheet 1.
+
 ## How this was made
 
 The
@@ -117,31 +166,6 @@ The
 directory contains the the scripts necessary to create everything in
 this package, including the R data objects and the plain text, excel and
 SQLite database files.
-
-## Example usage of `region_lang`
-
-For each census division, the data set `region_lang` contains the counts
-of how many Canadians report each language as their mother tongue, which
-language they speak most often at home, which language they use most
-often at work, and which language they have knowledge for.
-
-``` r
-library(canlang)
-library(dplyr)
-region_lang %>% 
-    filter(region == "Greater Vancouver (RD)") %>% 
-    arrange(desc(mother_tongue)) %>% 
-    head()
-#> # A tibble: 6 x 7
-#>   region  category   language mother_tongue most_at_home most_at_work lang_known
-#>   <fct>   <chr>      <chr>            <dbl>        <dbl>        <dbl>      <dbl>
-#> 1 Greate… Official … English        1316635      1622735      1330560    2289520
-#> 2 Greate… Non-Offic… Cantone…        184365       132185        22890     223705
-#> 3 Greate… Non-Offic… Mandarin        174920       138680        23190     250175
-#> 4 Greate… Non-Offic… Punjabi…        151205       104855        13130     187530
-#> 5 Greate… Non-Offic… Tagalog…         66830        30700          635      96295
-#> 6 Greate… Non-Offic… Korean           45990        34225         5075      50640
-```
 
 ## References
 

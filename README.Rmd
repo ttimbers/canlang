@@ -60,32 +60,40 @@ ggplot2::ggplot(data = can_lang,
     theme_bw()
 ```
 
+## Example usage of `region_lang`
+
+For each census metropolitan area (CMA), the data set `region_lang` contains the counts of how many Canadians report each language as their mother tongue, which language they speak most often at home, which language they use most often at work, and which language they have knowledge for. 
+
+```{r example-region_lang, warning = FALSE, message = FALSE}
+library(canlang)
+library(dplyr)
+region_lang %>% 
+    filter(region == "Vancouver") %>% 
+    arrange(desc(mother_tongue)) %>% 
+    head()
+```
+
 ## Plain text, excel and SQLite database files
 
 We have included several different plain text files, an excel files and a SQLite database file in this repo to be used for practice importing from these filetypes. Specifically, they are:
 
+### Canada-level
 + [`can_lang.csv`](https://github.com/ttimbers/canlang/blob/master/inst/extdata/can_lang.csv): the same dataset available via `canlang::can_lang` stored as a vanilla `.csv` file.
 + [`can_lang-meta-data.csv`](https://github.com/ttimbers/canlang/blob/master/inst/extdata/can_lang-meta-data.csv): the same dataset available via `canlang::can_lang` stored as a vanilla `.csv` file with two rows of metadata that should be skipped.
 + [`can_lang.tsv`](https://github.com/ttimbers/canlang/blob/master/inst/extdata/can_lang.tsv): the same dataset available via `canlang::can_lang` stored as a `.tsv` (tab separated) file and has no column names.
 + [`can_lang.xlsx`](https://github.com/ttimbers/canlang/blob/master/inst/extdata/can_lang.xlsx): the same dataset available via `canlang::can_lang` stored as a `.xlsx` file. Can be read in using the {[readxl](https://readxl.tidyverse.org/)} package.
 + [`can_lang.db`](https://github.com/ttimbers/canlang/blob/master/inst/extdata/can_lang.db): the same dataset available via `canlang::can_lang` stored as a SQLite database (`.db`) file. Can be read in using the {[RSQLite](https://rsqlite.r-dbi.org/)} package.
 
+### Census metroolitan area (CMA)-level
++ [`vancouver_lang.csv`](https://github.com/ttimbers/canlang/blob/master/inst/extdata/vancouver_lang.csv) & [`calgary_lang.csv`](https://github.com/ttimbers/canlang/blob/master/inst/extdata/calgary_lang.csv): data for Vancouver, BC and Calgary, AB, respectively, stored as a vanilla `.csv` file.
++ [`victoria_lang.csv`](https://github.com/ttimbers/canlang/blob/master/inst/extdata/victoria_lang.csv): data for Victoria, BC stored as a vanilla `.tsv` file.
++ [`kelowna_lang.csv`](https://github.com/ttimbers/canlang/blob/master/inst/extdata/kelowna_lang.csv): data for Kelowna, BC stored as a `.csv` file (csv2 flavour) with metadata in the header and footer that should be skipped.
++ [`abbotsford_lang.xlsx`](https://github.com/ttimbers/canlang/blob/master/inst/extdata/abbotsford_lang.xlsx): data for Abbotsford, BC stored as a `.xlsx` file where sheet 1 is the column names, and sheet 2 is the data with no column names. Can be read in using the {[readxl](https://readxl.tidyverse.org/)} package.
++ [`edmonton_lang.xlsx`](https://github.com/ttimbers/canlang/blob/master/inst/extdata/edmonton_lang.xlsx): data for Edmonton, AB stored as a `.xlsx` file where all the data is in sheet 1.
+
 ## How this was made
 
 The [`data-raw`](https://github.com/ttimbers/canlang/tree/master/data-raw) directory contains the the scripts necessary to create everything in this package, including the R data objects and the plain text, excel and SQLite database files.
-
-## Example usage of `region_lang`
-
-For each census division, the data set `region_lang` contains the counts of how many Canadians report each language as their mother tongue, which language they speak most often at home, which language they use most often at work, and which language they have knowledge for. 
-
-```{r example-region_lang, warning = FALSE, message = FALSE}
-library(canlang)
-library(dplyr)
-region_lang %>% 
-    filter(region == "Greater Vancouver (RD)") %>% 
-    arrange(desc(mother_tongue)) %>% 
-    head()
-```
 
 ## References
 
