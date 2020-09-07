@@ -137,6 +137,9 @@ ed_wb <- createWorkbook()
 addWorksheet(ed_wb, "Sheet1")
 writeData(ed_wb, sheet = "Sheet1", x = colnames(ed_lang))
 
+addWorksheet(ed_wb, "data")
+writeData(ed_wb, sheet = "data", x = ed_lang)
+
 saveWorkbook(ed_wb, here::here("inst", "extdata",
                                      "edmonton_lang.xlsx"),
              overwrite = TRUE)
